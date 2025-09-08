@@ -1,0 +1,311 @@
+﻿body {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+}
+.box1 {
+  max-width: 1100px;  /* これで画面より広くならない */
+  width: 100%;        /* 親に合わせて広がる */
+  margin: 0 auto;
+  padding: 0 1rem;    /* 左右に余白 */
+  display: flex;
+  justify-content: center;
+}
+
+.box2 {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+	.box1, .box2 {
+		width: 100%;
+		padding: 0 15px; /* スマホで左右にちょっと余白つける */
+		box-sizing: border-box;
+	}
+}
+/*-----------------------*/
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;  /* 縦並びに変更 */
+  justify-content: center; /* 横方向に中央揃え */
+  align-items: center;     /* 縦方向に中央揃え */
+  margin: 0;
+  text-align: center;      /* これでタイトル内のテキストも中央揃え */
+  color: #ffffff;
+  background: #4169e1;
+}
+.footer {
+	position: relative;
+	width: 100%;
+	min-height: 45px; 
+	display: flex;
+	position: relative;
+	margin: 0;
+	padding-right:10px;
+	text-align: right;
+	color: #ffffff;
+	font-size: 11px;
+	background: #4169e1; 
+	align-items: center;
+	justify-content: flex-end; 
+}
+.up{
+	position: absolute;
+	bottom: 50px;
+	right: 0; 
+	width: 50px;
+	height: 50px; 
+	background-color: #4169e1; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size:42px;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.3em;
+  letter-spacing: 1px;
+}
+h2 {
+  font-size: 1.8rem;              /* 少し大きくして見出し感 */
+  font-weight: 700;               /* 太めにしてメリハリ */
+  color: #222;                    /* しっかりした黒寄りグレーでコントラスト */
+  position: relative;
+  padding-left: 1rem;
+  margin: 2em 0 1em;
+}
+
+h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 6px;
+  height: 1.5em;
+  background-color: #4169e1;      /* キーカラーを細くアクセントに */
+  border-radius: 2px;
+}
+.center{ text-align:center; }
+/*-----------------------*/
+.container2 {	/*WEBとマクロの外枠のbox*/
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+/*-----------------------*/
+.container3 {	/*WEB*/
+	display: none;
+}
+.container3.active {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	width: 100%;
+	padding: 63px;
+	box-sizing: border-box;
+}
+
+.container3_1, .container3_2 {
+	text-align: left;
+	width: 50%; 
+	box-sizing: border-box;
+}
+.container3 img {
+    max-width: 300px;
+    max-height: 300px;
+    height: auto;
+    width: auto;
+}
+
+@media (max-width: 768px) {
+.container3 img {
+  max-width: 100%;    /* 親要素の幅に収まるように */
+  height: auto;       /* 縦横比は保つ */
+  display: block;     /* 余白防止（特にimgはインライン要素なので） */
+}
+
+	.container4 {
+		flex-direction: column;
+		align-items: center; 
+		text-align: center;
+	}
+
+}
+
+@media (max-width: 768px) {
+	.container3 {
+		flex-direction: column;
+		align-items: center;
+		gap: 20px; 
+	}
+
+	.container3_1, 
+	.container3_2 {
+		width: 100%; 
+		text-align: left;
+	}
+}
+/*-----------------------*/
+._container2{
+}
+
+.container4 {	/*マクロ*/
+/*	width: 1000px;*/
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: center;
+	text-align: left;
+}
+
+.container4 .container4_1 {
+	flex: 5;
+}
+.container4 .container4_1 img{
+	width:100%;
+	border:solid 1px #4169e1;
+	margin-bottom:17px;
+}
+
+.container4 .container4_2 {
+	flex: 1.5;
+	padding:0px 17px 0px 7px;
+}
+.container4 .container4_2 img{
+	width:100%;
+	border:solid 1px #4169e1;
+}
+
+.container4 .container4_3 {
+	flex: 3;
+	font-size:14px;
+}
+@media screen and (max-width: 768px) {
+  .container4 {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .container4 .container4_1,
+  .container4 .container4_2,
+  .container4 .container4_3 {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .container4 .container4_2 img {
+    width: 30%; /* 横に3つ並べたい場合 */
+    margin: 0 1% 10px 1%;
+    cursor: pointer; /* タップできる感出す */
+  }
+}
+/*-----------------------*/
+.str1 {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.str2 {
+	font-size: 30px;
+	font-weight: bold;
+}
+.str3 {
+	display: inline-block;
+	margin: 37px;
+	 font-size: 26px;
+}
+/*-----------------------*/
+/* 通常のタグスタイル */
+.tag {
+  width: 22%;
+  min-width: 150px;
+  padding: 12px 0;
+  background-color: #e0e0e0;        /* ちょい濃いグレーでシンプル */
+  color: #222;                      /* 少し濃い文字色で引き締め */
+  border-radius: 4px;              /* 角丸小さめでシャープに */
+  box-shadow: none;                /* 影なし（または控えめでもOK） */
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid #ccc;         /* 境界線で少しカチッと感 */
+  letter-spacing: 0.5px;          /* 若干文字に余白で整える */
+}
+
+.tag:hover {
+  background-color: #333;          /* グッと暗く */
+  color: #fff;                     /* 白文字でコントラスト */
+  transform: translateY(-2px);     /* わずかに浮かす */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);  /* 影は最小限で深さ演出 */
+}
+@media (max-width: 768px) {
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px; /* 少し余裕を持たせて整える */
+    padding: 0 16px; /* 端っこに少しスペース */
+  }
+
+  .tag {
+    width: 100%;
+    max-width: 300px;       /* スマホで横幅広がりすぎないように調整 */
+    padding: 14px 0;        /* 指で押しやすいようにちょっと余裕 */
+    font-size: 16px;        /* 読みやすく少し大きめ */
+  }
+}
+
+/*-----------------------*/
+.parallax {
+	background-image: url('img/bg.jpg');
+	height: 500px; 
+	background-attachment: fixed;/*背景を固定表示してパララックス風にする*/
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;/*要素を横並びにする*/
+	flex-direction: column; /*子要素を縦に並べる（横並びを防ぐ）*/
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-size: 2rem;
+}
+/*-----------------------*/
+.line_under {
+	border-bottom: 1px solid;
+}
+.line_right {
+	border-right: 1px solid;
+}
+td{
+	font-size:14px;
+	vertical-align: top;
+	padding:20px;
+}
+/*-----------------------*/
+
+.contact-link {
+  background-color: #ffffff22;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-decoration: none;
+  margin-right: 1em;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.contact-link:hover {
+  background-color: #ffffff33;
+  transform: translateY(-1px);
+}
+
