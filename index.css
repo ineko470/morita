@@ -11,6 +11,7 @@
   margin: 0 auto;
   padding: 0 1rem;    /* 左右に余白 */
   display: flex;
+  background:#f0f8ff;
   justify-content: center;
 }
 
@@ -78,7 +79,7 @@ h2 {
   color: #222;                    /* しっかりした黒寄りグレーでコントラスト */
   position: relative;
   padding-left: 1rem;
-  margin: 2em 0 1em;
+  margin: 1em 0 1em;
 }
 
 h2::before {
@@ -308,4 +309,26 @@ td{
   background-color: #ffffff33;
   transform: translateY(-1px);
 }
-
+/*-----------------------*/
+  .container {
+    display: flex;           /* 横並び */
+    width: 100%;             /* 画面幅いっぱい */
+  }
+  .container div {
+    flex: 1;                 /* 3等分にする */
+    text-align: center;      /* 文字と画像を中央寄せ */
+    padding: 10px;           /* 内側の余白 */
+    box-sizing: border-box;  /* パディング込みで幅を計算 */
+  }
+  .container img {
+    width: 80%;              /* 画像はボックス内で少し余白を持たせる */
+    height: auto;
+  }
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;  /* スマホでは縦並び */
+    }
+    .container div {
+      width: 100%;             /* 幅いっぱいに */
+    }
+  }
