@@ -37,4 +37,22 @@ document.addEventListener("DOMContentLoaded", function () {
       behavior: 'smooth'
     });
   }
+//--------------DIY-------------
+// サムネイルをクリック → オーバーレイ表示
+const thumbs = document.querySelectorAll('.thumb');
+const overlay = document.getElementById('overlay');
+const overlayImg = document.getElementById('overlay-img');
+
+thumbs.forEach(img => {
+  img.addEventListener('click', () => {
+    overlay.style.display = 'flex';
+    overlayImg.src = img.src; // 同じ画像を拡大表示
+  });
+});
+
+// オーバーレイをクリック → 閉じる
+overlay.addEventListener('click', () => {
+  overlay.style.display = 'none';
+  overlayImg.src = "";
+});
 

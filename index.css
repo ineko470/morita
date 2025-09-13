@@ -4,6 +4,7 @@
   line-height: 1.8;
   margin: 0;
   padding: 0;
+  background:#f0f8ff;
 }
 .box1 {
   max-width: 1100px;  /* これで画面より広くならない */
@@ -11,7 +12,6 @@
   margin: 0 auto;
   padding: 0 1rem;    /* 左右に余白 */
   display: flex;
-  background:#f0f8ff;
   justify-content: center;
 }
 
@@ -156,58 +156,52 @@ h2::before {
 	}
 }
 /*-----------------------*/
-._container2{
+.container4 {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  text-align: left;
 }
 
-.container4 {	/*マクロ*/
-/*	width: 1000px;*/
-	margin-left: auto;
-	margin-right: auto;
-	display: flex;
-	justify-content: center;
-	text-align: left;
-}
-
+/* container1 = 7割 */
 .container4 .container4_1 {
-	flex: 5;
+  flex: 7;
 }
-.container4 .container4_1 img{
-	width:100%;
-	border:solid 1px #4169e1;
-	margin-bottom:17px;
+.container4 .container4_1 img {
+  width: 100%;
+  border: solid 1px #4169e1;
+  margin-bottom: 17px;
 }
 
+/* container2 = 3割 */
 .container4 .container4_2 {
-	flex: 1.5;
-	padding:0px 17px 0px 7px;
+  flex: 3;
+  padding: 0 17px 0 7px;
 }
-.container4 .container4_2 img{
-	width:100%;
-	border:solid 1px #4169e1;
+.container4 .container4_2 img {
+  width: 30%;
+  border: solid 1px #4169e1;
 }
 
-.container4 .container4_3 {
-	flex: 3;
-	font-size:14px;
-}
 @media screen and (max-width: 768px) {
   .container4 {
     flex-direction: column;
     width: 100%;
     padding: 10px;
   }
-
   .container4 .container4_1,
-  .container4 .container4_2,
-  .container4 .container4_3 {
+  .container4 .container4_2 {
     width: 100%;
     padding: 10px 0;
   }
-
+  .container4 .container4_1 img {
+    width: 100%;
+  }
   .container4 .container4_2 img {
-    width: 30%; /* 横に3つ並べたい場合 */
+    width: 30%;          
     margin: 0 1% 10px 1%;
-    cursor: pointer; /* タップできる感出す */
+    cursor: pointer;         
   }
 }
 /*-----------------------*/
@@ -293,7 +287,6 @@ td{
 	padding:20px;
 }
 /*-----------------------*/
-
 .contact-link {
   background-color: #ffffff22;
   color: #ffffff;
@@ -320,10 +313,47 @@ td{
     padding: 10px;           /* 内側の余白 */
     box-sizing: border-box;  /* パディング込みで幅を計算 */
   }
-  .container img {
-    width: 80%;              /* 画像はボックス内で少し余白を持たせる */
-    height: auto;
-  }
+.thumb {
+  width: 30%;       
+  max-width: 150px; 
+  height: auto;     
+  cursor: pointer;
+  margin: 5px;
+  transition: transform 0.2s;
+}
+
+.thumb:hover {
+  transform: scale(1.05); /* ホバーでちょっと拡大 */
+}
+
+/* オーバーレイ全体 */
+#overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: none;           /* 初期は非表示 */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* 拡大画像 */
+#overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 4px solid white;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  animation: zoomIn 0.3s ease;
+}
+
+/* ビヨンと拡大するアニメーション */
+@keyframes zoomIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
   @media (max-width: 768px) {
     .container {
       flex-direction: column;  /* スマホでは縦並び */

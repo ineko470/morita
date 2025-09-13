@@ -6,21 +6,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="index.css">
 <link rel="icon" href="img/ineko.ico" type="image/x-icon">
-<script src="index.js"></script>
 </head>
 <body>
-<div class="box1">
-	<div class="box2">
 		<header>
 		<h1>Morita Ineko Portfolio</h1>
 		</header>
+<div class="box1">
+	<div class="box2">
 		<!------------------------------------------------------------------>
-		<h2>PHP +</h2>
+		<h2>PHP</h2>
 		<div class="container2">
 			<div class="tag tag1" data-target="cnt1">Googleアプリ</div>
 			<div class="tag tag2" data-target="cnt2">Wordpress</div>
 			<div class="tag tag3" data-target="cnt3">kintone</div>
-			<div class="tag tag4" data-target="cnt4">Excelマクロ</div>
+			<div class="tag tag4" data-target="cnt4">Excel</div>
 		</div>
 		
 		<div id="cnt1" class="container3">
@@ -45,7 +44,7 @@
 			①welcartに追加したオリジナルの買い物カート<br>
 			（スプレッドシート用とkintone用があります）<br>
 			<img src='img/wp/w2.jpg'><br>
-			②送り先はwelcartのログイン情報から<br>
+			②送り先入力画面。ログイン情報はwelcartから<br>
 			<img src='img/wp/w3.jpg'>
 			</div>
 			<div class="container3_2">
@@ -79,53 +78,55 @@
 			</div>
 		</div>
 		<!------------------------------------------------------------------>
-		<div class="_container2">
-			<h2>Excelマクロ</h2>
-			<div class="container4">
-				<div class="container4_3">
-				順に<br>
-				・ExcelからWEBサーバーのDB更新<br>
-				・翻訳（Hugging FaceのAI利用/画像はGoogle翻訳 API）<br>
-				・グラフ作成<br>
-				・ファイル名一括変更<br>
-				　・・・週報作成、kintoneデータの整形、シール印刷etc..
-				</div>
-				<div class="container4_2">
-				<img src='img/macro/excelD.jpg' class='mini' data-target="col1">
-				<img src='img/macro/apple.jpg' class='mini' data-target="col2">
-				<img src='img/macro/graph.jpg' class='mini' data-target="col3">
-				<img src='img/macro/file_name.jpg' class='mini' data-target="col4">
-				</div>
-				<div class="container4_1">
-				<img src='img/macro/excelD.jpg' id='color1'>
-				</div>
+		<h2>Excelマクロ</h2>
+		<div class="container4">
+			<div class="container4_2">
+			ExcelからWEBサーバーへデータ送信<br>
+			<img src='img/macro/excelD.jpg' class='mini' data-target="col1"><br>
+			翻訳（Hugging FaceのAI利用またはGoogle翻訳のAPI）<br>
+			<img src='img/macro/apple.jpg' class='mini' data-target="col2"><br>
+			グラフ作成<br>
+			<img src='img/macro/graph.jpg' class='mini' data-target="col3"><br>
+			ファイル名一括変更／一括削除／一覧作成<br>
+			<img src='img/macro/file_name.jpg' class='mini' data-target="col4"><br>
+			・・・その他、一年分の週報作成やシール印刷など
+			</div>
+			<div class="container4_1">
+			<img src='img/macro/excelD.jpg' id='color1'>
 			</div>
 		</div>
 		<!------------------------------------------------------------------>
 		<div class="_container2">
-			<h2>DIY／練習など</h2>
+			<h2>DIYなど</h2>
 			<div class="container">
 			  <div>
-			    掲示板風LINE（スマホを持たない家族のため作成）<br>
-			    <img src="img/wd.jpg">
+			    掲示板風LINE（家族用にDIY）<br>
+			    <img src="img/diy/wd.jpg" class="thumb">
 			  </div>
 			  <div>
-			    Laravelの練習用サイト（TOPページ）<br>
-			    <img src="img/lara/lara1.jpg">
+			    Laravelの勉強（TOPページ）<br>
+			    <img src="img/diy/lara1.jpg" class="thumb">
 			  </div>
 			  <div>
-			    Laravelの練習用サイト（限定ページ）<br>
-			    <img src="img/lara/lara2.jpg">
+			    Laravelの勉強（限定ページ）<br>
+			    <img src="img/diy/lara2.jpg" class="thumb">
 			  </div>
+
+				<div id="overlay">
+				  <img id="overlay-img" src="" alt="">*
+				</div>
 			</div>
 		</div>
 		<br>
 		<!------------------------------------------------------------------>
 		<div class="parallax">
-			<p class='center'><img src='img/ya.png' style='width:70px'></p>
 			<table>
 			<tr>
-				<td class="line_under line_right">氏　　名</td>
+				<td class="center" colspan=2><img src='img/ya.png' style='width:70px'></td>
+			</tr>
+
+			<tr>
+				<td class="line_under line_right">名　　前</td>
 				<td class="line_under">森田稲子</td>
 			</tr>
 			<tr>
@@ -155,5 +156,6 @@
 		</div>
 	</div>
 </div>
+<script src="index.js"></script>
 </body>
 </html>
