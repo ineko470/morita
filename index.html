@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Work Note</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="index.css">
+<link rel="icon" href="img/ineko.ico" type="image/x-icon">
+</head>
+<body>
+		<header>
+		<h1>Work Note</h1>
+		</header>
+<div class="box1">
+	<div class="box2">
+		<!------------------------------------------------------------------>
+		<div class="parallax">
+			<table>
+			<!--<tr>
+				<td class="center" colspan=2><br><img src='img/ya.png' style='width:70px'></td>
+			</tr>-->
+			<tr><td colspan=2 >
+				文系事務職50代主婦。<br>
+				長年マクロや素のPHPで業務改善ツールをを作ってきましたが、チーム開発の経験はありません。<br>
+				現在は家業の米農家を手伝う傍ら、個人使いのツールをDIYすることを楽しんでいます。<br>
+				作ったものが溜まってきたのでアルバムにしてみました（CSSも使わないと忘れてしまうし）。<br>
+				実務で使ったことが無いので、GitHubやLaravelも試しています。<br>
+			</td></tr>
+
+			<tr>
+				<td class="line_under line_right"style="width:30%">名　　前</td>
+				<td class="line_under">森田稲子</td>
+			</tr>
+			<tr>
+				<td class="line_under line_right">所　　在</td>
+				<td class="line_under">岐阜県
+				</td>
+			</tr>
+			<tr>
+				<td class="line_right"></td>
+				<td class=""><img src='img/ya.png' style='width:70px'></td>
+			</tr>
+			</table>
+		</div>
+		<!------------------------------------------------------------------>
+		<div>
+			<h2>Excel + PHP</h2>
+			<div class="container">
+			  <div>
+			    <img src="img/excel1.jpg" class="thumb"><br>
+				<div class="left">
+				入力や計算は手軽なExcelで。スマホでも見られるようにデータとグラフをWEBに送れるようにしました。
+				</div>
+			  </div>
+			  <div>
+			    <img src="img/excel2.jpg" class="thumb"><br>
+				Excelからデータを更新するページに天気予報APIをつけました。
+			  </div>
+			  <div>
+			    <img src="img/excel3.jpg" class="thumb"><br>
+				Excelのフォームから送信してDBに書込みした例。
+			  </div>
+
+				<div id="overlay">
+				  <img id="overlay-img" src="" alt="">*
+				</div>
+			</div>
+		</div>
+		<!------------------------------------------------------------------>
+		<div>
+			<h2>Googleアプリ／GAS</h2>
+			<div class="container">
+			  <div>
+			    <img src="img/diary.jpg" class="thumb"><br>
+				PCを立ち上げるのが面倒で、LINEから日記（スプレッドシート）に書込めるようにしました。
+			  </div>
+			  <div>
+			    <img src="img/calender.jpg" class="thumb"><br>
+				WEBフォームやGoogleフォームからカレンダー書込みしてLINE通知なんてこともできるようです。。
+			  </div>
+			  <div>
+			    <img src="img/ocr.jpg" class="thumb"><br>
+				文字起こしはGoogleの機能を利用するのが最も手軽だったためスプレッドシートに組み込みました。<br>
+				翻訳は最初 HuggingFace のAIを試したのですが、無料枠がいっぱいになってしまい、Googleの機能を利用しました。
+			  </div>
+			  <div>
+			    <img src="img/qr.jpg" class="thumb"><br>
+				PCでQRコードだけが表示され、「このURLにアクセスしたいのにリンクがない」という状況にしばしば出くわすので作りました
+			  </div>
+			</div>
+		</div>
+		<!------------------------------------------------------------------>
+		<div>
+			<h2>マクロ等</h2>
+			<div class="container">
+			  <div>
+			    <img src="img/wall.jpg" class="thumb"><br>
+				著作権を気にせず使える背景画像が欲しくて作りました。
+			  </div>
+			  <div>
+			    <img src="img/jimu.jpg" class="thumb"><br>
+				ファイル名を一括変更したい、名前を忘れたファイルを探したいなどの際に。
+			  </div>
+			  <div>
+			    <img src="img/line.jpg" class="thumb"><br>
+				スマホを持っていない家族が家族LINEに参加できず寂しそうだったので作りました。
+			  </div>
+
+			</div>
+		</div>
+		<!------------------------------------------------------------------>
+		<div>
+			<h2>WordPressとLaravel（の練習）など</h2>
+			<div class="container">
+			  <div>
+			    <img src="img/wp1.jpg" class="thumb"><br>
+				welcartにオリジナルフォームを付けてみました。
+				書き込み先はkintoneとスプレッドシートの2種類（テスト）。
+			  </div>
+			  <div>
+			    <img src="img/wp2.jpg" class="thumb"><br>
+				手書きPHPの買い物カート
+			  </div>
+			  <div>
+			    <img src="img/lara.jpg" class="thumb"><br>
+				以前挫折したLaravelに再挑戦
+			  </div>
+			</div>
+		</div>
+		<!------------------------------------------------------------------>
+		<small style="display:block; margin-top:1em; font-size:11px; color:#808080;">
+		※このサイトは、個人の活動紹介・ポートフォリオを目的として作成したものです。<br>
+		</small>
+		<div class="footer">
+			<span class="contact-link" onclick="alert('申し訳ありません。\nこれはサンプルです。')">お問い合わせ</span>
+			<div class="up" onclick="scrollToTop()">▲</div>
+			 by Morita Ineko 
+		</div>
+	</div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
