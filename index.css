@@ -4,80 +4,78 @@
   line-height: 1.8;
   margin: 0;
   padding: 0;
-  background:#f0f8ff;
+  background: #f0f8ff;
 }
-.box1 {
-  max-width: 1100px;  /* これで画面より広くならない */
-  width: 100%;        /* 親に合わせて広がる */
+
+/*-----------------------
+  レイアウト
+-----------------------*/
+.box1,
+.box2,
+header {
+  max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0px ;    /* 左右に余白 */
+  box-sizing: border-box;
+}
+
+.box1 {
   display: flex;
   justify-content: center;
 }
 
-.box2 {
-	width: 1100px;
-	margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-	.box1, .box2 {
-		width: 100%;
-	/*	padding: 0 15px; /* スマホで左右にちょっと余白つける */
-		box-sizing: border-box;
-	}
-}
-/*-----------------------*/
 header {
-  max-width: 1100px;  /* これで画面より広くならない */
-  width: 100%;
   display: flex;
-  flex-direction: column;  /* 縦並びに変更 */
-  justify-content: center; /* 横方向に中央揃え */
-  align-items: center;     /* 縦方向に中央揃え */
-  margin: 0 auto;
-  text-align: center;      /* これでタイトル内のテキストも中央揃え */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;     
+  text-align: center;
   color: #ffffff;
   background: #4169e1;
 }
+
 .footer {
-	position: relative;
-	width: 100%;
-	min-height: 45px; 
-	display: flex;
-	position: relative;
-	margin: 0;
-	padding-right:10px;
-	text-align: right;
-	color: #ffffff;
-	font-size: 11px;
-	background: #4169e1; 
-	align-items: center;
-	justify-content: flex-end; 
-}
-.up{
-	position: absolute;
-	bottom: 50px;
-	right: 0; 
-	width: 50px;
-	height: 50px; 
-	background-color: #4169e1; 
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size:42px;
+  position: relative;   /* ← これを復活させる */
+  width: 100%;
+  min-height: 2.8rem;
+  display: flex;
+  margin: 0;
+  padding-right: 0.625rem;
+  text-align: right;
+  color: #ffffff;
+  font-size: 0.7rem;
+  background: #4169e1;
+  align-items: center;
+  justify-content: flex-end;
 }
 
+.up {
+  position: absolute;
+  bottom: 3.125rem; /* 50px */
+  right: 0; 
+  width: 3.125rem;
+  height: 3.125rem; 
+  background-color: #4169e1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.6rem; /* 42px */
+}
+
+/*-----------------------
+  見出し
+-----------------------*/
 header h1 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.3em;
   letter-spacing: 1px;
 }
+
 h2 {
-  font-size: 1.8rem;              /* 少し大きくして見出し感 */
-  font-weight: 700;               /* 太めにしてメリハリ */
-  color: #222;                    /* しっかりした黒寄りグレーでコントラスト */
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #222;
   position: relative;
   padding-left: 1rem;
   margin: 1em 0 1em;
@@ -88,106 +86,119 @@ h2::before {
   position: absolute;
   left: 0;
   top: 0.25em;
-  width: 10px;
+  width: 0.625rem; /* 10px */
   height: 1.5em;
-  background-color: #4169e1;      /* キーカラーを細くアクセントに */
+  background-color: #4169e1;
   border-radius: 2px;
 }
-@media (max-width: 1130px) {
-	h2{  margin-left: 10px;}
 
-}
+/*-----------------------
+  テキスト配置
+-----------------------*/
+.left  { text-align: left; }
+.center{ text-align: center; }
+.right { text-align: right; }
 
-.left { text-align: left;  }
-.center{ text-align:center; }
-.right{ text-align:right; }
-
-/*-----------------------*/
+/*-----------------------
+  パララックス
+-----------------------*/
 .parallax {
-	background-image: url('img/bg.jpg');
-	height: 500px; 
-	background-attachment: fixed;/*背景を固定表示してパララックス風にする*/
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	display: flex;/*要素を横並びにする*/
-	flex-direction: column; /*子要素を縦に並べる（横並びを防ぐ）*/
-	align-items: center;
-	justify-content: center;
-	color: white;
-	font-size: 2rem;
+  background-image: url('img/bg.jpg');
+  height: 31.25rem; /* 500px */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
 }
-/*-----------------------*/
-.line_under {
-	border-bottom: 1px solid;
+
+/* スマホでのフォールバック */
+@supports (-webkit-touch-callout: none) {
+  .parallax {
+    background-attachment: scroll;
+  }
 }
-.line_right {
-	border-right: 1px solid;
+
+/*-----------------------
+  テーブル
+-----------------------*/
+td {
+  font-size: 0.875rem; /* 14px */
+  vertical-align: top;
+  padding: 1.25rem; /* 20px */
 }
-td{
-	font-size:14px;
-	vertical-align: top;
-	padding:20px;
-}
-/*-----------------------*/
+
+/*-----------------------
+  リンクボタン
+-----------------------*/
 .contact-link {
   background-color: #ffffff22;
   color: #ffffff;
-  padding: 6px 12px;
+  padding: 0.375rem 0.75rem; /* 6px 12px */
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 0.75rem; /* 12px */
   text-decoration: none;
   margin-right: 1em;
   transition: background 0.3s, transform 0.2s;
 }
-
 .contact-link:hover {
   background-color: #ffffff33;
   transform: translateY(-1px);
 }
-/*-----------------------*/
+
+/*-----------------------
+  コンテナ
+-----------------------*/
 .container {
-  display: flex;/*★親の箱をフレックスにする*/
-  justify-content: space-between; /* 左右端まで均等配置 */
-  gap: 20px;                       /* 任意で間隔調整 */
+  display: flex;
+  justify-content: space-between;
+  gap: 1.25rem; /* 20px */
 }
-  .container div {
-    flex: 1;                 /* ★子を全部均等に分ける(3つの子なら3等分、4つなら4等分、というように自動計算してくれる) */
-    padding: 10px;           /* 内側の余白 */
-    box-sizing: border-box;  /* パディング込みで幅を計算 */
-  }
+.cnt {
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* X方向0px, Y方向4px, ぼかし12px, 軽い黒透明 */
+    border-radius: 8px;
+    overflow: hidden;
+}
+.container div {
+  flex: 1;
+  padding: 0.625rem; /* 10px */
+  box-sizing: border-box;
+}
 .container img {
-  display: block;      /* ブロック要素に変更 */
-  margin: 0 auto;      /* 左右マージン自動で中央寄せ */
+  display: block;
+  margin: 0 auto;
 }
 
 .thumb {
- /* width: 70%;       */
-  max-width: 250px; 
+  max-width: 230px; 
   height: auto;     
   cursor: pointer;
-  margin: 5px;
+  margin: 0.3125rem; /* 5px */
   transition: transform 0.2s;
 }
-
 .thumb:hover {
-  transform: scale(1.05); /* ホバーでちょっと拡大 */
+  transform: scale(1.05);
 }
 
-
-/* オーバーレイ全体 */
+/*-----------------------
+  オーバーレイ
+-----------------------*/
 #overlay {
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
   background: rgba(0,0,0,0.7);
-  display: none;           /* 初期は非表示 */
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 9999;
 }
-
-/* 拡大画像 */
 #overlay img {
   max-width: 90%;
   max-height: 90%;
@@ -196,18 +207,27 @@ td{
   box-shadow: 0 0 20px rgba(0,0,0,0.8);
   animation: zoomIn 0.3s ease;
 }
-
-/* ビヨンと拡大するアニメーション */
 @keyframes zoomIn {
   from { transform: scale(0.5); opacity: 0; }
   to   { transform: scale(1); opacity: 1; }
 }
 
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;  /* スマホでは縦並び */
-    }
-    .container div {
-      width: 100%;             /* 幅いっぱいに */
-    }
+/*-----------------------
+  メディアクエリ
+-----------------------*/
+@media (max-width: 1130px) {
+  h2 { margin-left: 0.625rem; } /* 10px */
+}
+
+@media (max-width: 768px) {
+  .box1, .box2 {
+    width: 100%;
+    box-sizing: border-box;
   }
+  .container {
+    flex-direction: column;
+  }
+  .container div {
+    width: 100%;
+  }
+}
